@@ -2,15 +2,16 @@
   "name": "modoobot",
   "version": "1.0.0",
   "description": "kakaobot",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node app.js"
   },
   "author": "k_enzy",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.1",
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "restify": "2.6.0"
   }
 }

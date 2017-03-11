@@ -37,5 +37,5 @@ app.delete("/friend/:user_key", function(req, res){
 	res.send();
 });
 
-app.listen(8888);
-console.log('webServer:8888 ON');
+app.listen(80);
+console.log('webServer:80 ON');

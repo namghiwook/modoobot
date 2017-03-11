@@ -7,9 +7,9 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.get('/', function (req, res) {
-	res.send("hello");
-});
+// app.get('/', function (req, res) {
+// 	res.send("hello");
+// });
 
 //초기 키보드
 app.get('/keyboard', function(req, res){

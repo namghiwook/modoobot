@@ -8,7 +8,8 @@ server.use(restify.bodyParser());
 
 
 server.get("/keyboard", function (req, res, next) {
-    res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
+    // res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
+    res.writeHead(200);
     res.end("{'type': 'text'}");
     return next();
 });

@@ -15,7 +15,7 @@ server.get("/keyboard", function (req, res, next) {
 
 server.post("/message", function (req, res, next) {
     res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
-    res.end("{'message': {'text': 'hello'}}");
+    res.end("{'message': {'text': 'hello'}, 'keyboard': {'type': 'text'}}");
     return next();
 });
 

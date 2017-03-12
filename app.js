@@ -9,13 +9,20 @@ server.use(restify.bodyParser());
 
 server.get("/keyboard", function (req, res, next) {
     res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
-    res.end("{'type':'text'}");
+    var obj = {};
+    obj.type = "text";
+    res.end(JSON.stringify(obj));
     return next();
 });
 
 server.post("/message", function (req, res, next) {
     res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
-    res.end("{'message':{'text':'hello'}, 'keyboard':{'type':'text'}}");
+    var obj = {};
+    obj.message = {};
+    obj.message.text = "hello";
+    obj.keyboard = {};
+    obj.keyboard.type = "text";
+    res.end(JSON.stringify(obj));
     return next();
 });
 

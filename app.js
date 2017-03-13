@@ -18,36 +18,8 @@ server.get("/keyboard", function (req, res, next) {
 });
 
 server.post("/message", function (req, res, next) {
-    var msg = JSON.parse(req.body);
-    if (msg.type == "text" &&  msg.content == "vinylc") {
-        var options = {
-            hostname: 'thawing-sierra-80063.herokuapp.com',
-            path: '/message',
-            method: 'POST'
-        };
-        http.request(options, function (response) {
-            var data = '';
-            response.on('data', function (chunk) {
-                data += chunk;
-            });
-            response.on('end', function () {
-                console.log(data);
 
-                // res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
-                res.writeHead(200, {'Content-Type': 'application/json;'});
-                var obj = {};
-                obj.message = {};
-                obj.message.text = data;
-                obj.keyboard = {};
-                obj.keyboard.type = "text";
-                res.end(JSON.stringify(obj));
-                return next();
-
-            });
-        }).end();
-    } else {
-        // res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
-        res.writeHead(200, {'Content-Type': 'application/json;'});
+    res.writeHead(200, {'Content-Type': 'application/json;'});
         var obj = {};
         obj.message = {};
         obj.message.text = "hello";
@@ -55,7 +27,45 @@ server.post("/message", function (req, res, next) {
         obj.keyboard.type = "text";
         res.end(JSON.stringify(obj));
         return next();
-    }
+
+    // var msg = JSON.parse(req.body);
+    // if (msg.type == "text" &&  msg.content == "vinylc") {
+    //     var options = {
+    //         hostname: 'thawing-sierra-80063.herokuapp.com',
+    //         path: '/message',
+    //         method: 'POST'
+    //     };
+    //     http.request(options, function (response) {
+    //         var data = '';
+    //         response.on('data', function (chunk) {
+    //             data += chunk;
+    //         });
+    //         response.on('end', function () {
+    //             console.log(data);
+
+    //             // res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
+    //             res.writeHead(200, {'Content-Type': 'application/json;'});
+    //             var obj = {};
+    //             obj.message = {};
+    //             obj.message.text = data;
+    //             obj.keyboard = {};
+    //             obj.keyboard.type = "text";
+    //             res.end(JSON.stringify(obj));
+    //             return next();
+
+    //         });
+    //     }).end();
+    // } else {
+    //     // res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
+    //     res.writeHead(200, {'Content-Type': 'application/json;'});
+    //     var obj = {};
+    //     obj.message = {};
+    //     obj.message.text = "hello";
+    //     obj.keyboard = {};
+    //     obj.keyboard.type = "text";
+    //     res.end(JSON.stringify(obj));
+    //     return next();
+    // }
 
 });
 

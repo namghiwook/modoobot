@@ -17,8 +17,8 @@ server.get("/keyboard", function (req, res, next) {
 });
 
 server.post("/message", function (req, res, next) {
-
-    if (req.body == "vinylc") {
+    var msg = JSON.parse(req.body);
+    if (msg.type == "text" &&  msg.content == "vinylc") {
         var options = {
             hostname: 'thawing-sierra-80063.herokuapp.com',
             path: '/message',

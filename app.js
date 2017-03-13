@@ -18,18 +18,8 @@ server.get("/keyboard", function (req, res, next) {
 });
 
 server.post("/message", function (req, res, next) {
-
-    // res.writeHead(200, {'Content-Type': 'application/json;'});
-    //     var obj = {};
-    //     obj.message = {};
-    //     obj.message.text = "hello";
-    //     obj.keyboard = {};
-    //     obj.keyboard.type = "text";
-    //     res.end(JSON.stringify(obj));
-    //     return next();
-
     console.log("________ /message ......");
-    var msg = JSON.parse(req.body);
+    var msg = req.body;
     console.log("msg", msg);
     if (msg.type == "text" &&  msg.content == "vinylc") {
         var options = {

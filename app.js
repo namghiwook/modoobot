@@ -68,6 +68,12 @@ server.del("/friend/:user_key", function (req, res, next) {
     return next();
 });
 
+server.del("/chat_room/:user_key", function (req, res, next) {
+    res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
+    res.end();
+    return next();
+});
+
 
 
 

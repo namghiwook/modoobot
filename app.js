@@ -9,7 +9,8 @@ server.use(restify.bodyParser());
 
 
 server.get("/keyboard", function (req, res, next) {
-    res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
+    // res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
+    res.writeHead(200, {'Content-Type': 'application/json;'});
     var obj = {};
     obj.type = "text";
     res.end(JSON.stringify(obj));
@@ -32,7 +33,8 @@ server.post("/message", function (req, res, next) {
             response.on('end', function () {
                 console.log(data);
 
-                res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
+                // res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
+                res.writeHead(200, {'Content-Type': 'application/json;'});
                 var obj = {};
                 obj.message = {};
                 obj.message.text = data;
@@ -44,7 +46,8 @@ server.post("/message", function (req, res, next) {
             });
         }).end();
     } else {
-        res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
+        // res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
+        res.writeHead(200, {'Content-Type': 'application/json;'});
         var obj = {};
         obj.message = {};
         obj.message.text = "hello";
@@ -57,19 +60,22 @@ server.post("/message", function (req, res, next) {
 });
 
 server.post("/friend", function (req, res, next) {
-    res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
+    // res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
+    res.writeHead(200, {'Content-Type': 'application/json;'});
     res.end();
     return next();
 });
 
 server.del("/friend/:user_key", function (req, res, next) {
-    res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
+    // res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
+    res.writeHead(200, {'Content-Type': 'application/json;'});
     res.end();
     return next();
 });
 
 server.del("/chat_room/:user_key", function (req, res, next) {
-    res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
+    // res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
+    res.writeHead(200, {'Content-Type': 'application/json;'});
     res.end();
     return next();
 });

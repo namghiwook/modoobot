@@ -35,14 +35,17 @@ server.post("/message", function (req, res, next) {
             response.on('end', function () {
                 console.log(data);
 
+                
+
                 // res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
                 res.writeHead(200, {'Content-Type': 'application/json;'});
-                var obj = {};
-                obj.message = {};
-                obj.message.text = data;
-                obj.keyboard = {};
-                obj.keyboard.type = "text";
-                res.end(JSON.stringify(obj));
+                // var obj = {};
+                // obj.message = {};
+                // obj.message.text = data;
+                // obj.keyboard = {};
+                // obj.keyboard.type = "text";
+                // res.end(JSON.stringify(obj));
+                res.end(data);
                 return next();
 
             });
